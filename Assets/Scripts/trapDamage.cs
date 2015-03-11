@@ -6,16 +6,13 @@ public class trapDamage : MonoBehaviour {
 
 	Collider thingCurrentlyInside;
 	public float dps = 35f;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (thingCurrentlyInside != null){
-			thingCurrentlyInside.GetComponent<damageControll>().health -= Time.deltaTime * dps;
+			if (thingCurrentlyInside.name == "Player Object"){
+				thingCurrentlyInside.GetComponent<damageControll>().health -= Time.deltaTime * dps;
+			}
 		}
 	}
 
